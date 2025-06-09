@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+<!-- OneTrust Cookies Consent Notice start for xilinx.github.io -->
+
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" data-document-language="true" type="text/javascript" charset="UTF-8" data-domain-script="03af8d57-0a04-47a6-8f10-322fa00d8fc7" ></script>
+<script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end for xilinx.github.io -->
+<!-- Google Tag Manager -->
+<script type="text/plain" class="optanon-category-C0002">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5RHQV7');</script>
+<!-- End Google Tag Manager -->
+  <title>System Testability and Setup &mdash; PCIe Debug K-Map 1.0 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Supporting Documentation" href="supporting_documentation.html" />
+    <link rel="prev" title="Tactical Patch Requirement" href="tactical_patch_requirement.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5RHQV7" height="0" width="0" style="display:none;visibility:hidden" class="optanon-category-C0002"></iframe></noscript>
+<!-- End Google Tag Manager --> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+            <a href="../../../index.html" class="icon icon-home"> PCIe Debug K-Map
+            <img src="../../../_static/xilinx-header-logo.svg" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">PCIe Debug (General)</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../PCIe_Collaterals/index.html">PCIe Collaterals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PCIe_Common_Issues/index.html">PCIe Common Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PCIe_Debug_General_Techniques/index.html">PCIe General Debug Techniques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Link_Training/index.html">Link Training Issue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Simulation_Issue/index.html">Simulation Issue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Interrupt/index.html">Interrupt Issue</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Versal ACAP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Versal_ACAP_CPM_Mode_for_PCI_Express/index.html">Versal ACAP CPM Mode for PCI Express</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Versal_ACAP_Integrated_Block_for_PCI_Express/index.html">Versal ACAP Integrated Block for PCI Express</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">UltraScale+</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../UltraScale%2B_Devices_Integrated_Block_for_PCIExpress/index.html">UltraScale+ Devices Integrated Block for PCIExpress</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">XDMA/Bridge Subsystem</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../DMA_Bridge_Subsystem_for_PCI_Express_XDMA_IP_Driver/index.html">DMA/Bridge Subsystem for PCI Express (XDMA IP/Driver)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../DMA_Bridge_Subsystem_for_PCI_Express_Bridge_IP_Endpoint/index.html">DMA/Bridge Subsystem for PCI Express (Bridge IP Endpoint)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">QDMA</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../QDMA_Subsystem_for_PCIExpress_IP_Driver/index.html">QDMA Subsystem for PCIExpress (IP/Driver)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../QDMA_Subsystem_for_PCIExpress_IP_Driver/qdma_conceptual_topics/index.html">QDMA Conceptual Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../QDMA_Subsystem_for_PCIExpress_IP_Driver/qdma_debug_topics/index.html">QDMA Debug Topics</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Embedded PCI Express</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation &amp; Debugging Resources</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Versal CPM5 PCIe Root Port Design (Linux)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="hardware_design_creation.html">Hardware Design Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="petalinux_image_generation.html">PetaLinux Image Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="device_tree_structure.html">Device Tree Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecam_mapping_and_addressing.html">ECAM Mapping and Addressing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tactical_patch_requirement.html">Tactical Patch Requirement</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">System Testability and Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#loading-images-onto-sd">Loading Images onto SD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#booting-and-testing">Booting and Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-up-components">Setting up Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#interacting-with-petalinux">Interacting with PetaLinux</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="supporting_documentation.html">Supporting Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debugging.html">Debugging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../MPSoC_PL_XDMA_Bridge_RC_Design_Bare_Metal/index.html">MPSoC PL XDMA Bridge Bare Metal Root Complex Design</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: black" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">PCIe Debug K-Map</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Versal CPM5 PCIe Root Port Design (Linux)</a> &raquo;</li>
+      <li>System Testability and Setup</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/docs/PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM5_PCIe_Root_Port_Design_Linux/system_testability_and_setup.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="system-testability-and-setup">
+<span id="ps-pcie-pl-pcie-driver-debug-checklist"></span><h1>System Testability and Setup<a class="headerlink" href="#system-testability-and-setup" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="loading-images-onto-sd">
+<h2>Loading Images onto SD<a class="headerlink" href="#loading-images-onto-sd" title="Permalink to this heading">¶</a></h2>
+<p>To boot via SD card, the correct files need to be loaded onto the SD card. First, the SD card should be connected to the system. The following three files from the <code class="docutils literal notranslate"><span class="pre">&lt;PETALINUX_PROJECT_FOLDER&gt;/images/linux</span></code> path must be copied to the SD card:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">boot.scr</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BOOT.BIN</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">image.ub</span></code></p></li>
+</ul>
+<p>Once the files are finished copying to the SD card, the device should be safely ejected. The system is now ready to work directly with the VPK120.</p>
+</div>
+<div class="section" id="booting-and-testing">
+<h2>Booting and Testing<a class="headerlink" href="#booting-and-testing" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="setting-up-components">
+<h2>Setting up Components<a class="headerlink" href="#setting-up-components" title="Permalink to this heading">¶</a></h2>
+<p><strong>Boot Mode Configuration</strong></p>
+<p>On the VPK120, ensure that the Boot Mode is set to the SD configuration. To do this, configure switch SW1 such that it is set to ON-OFF-OFF-OFF (in order from positions 1 to 4). Refer to the VPK120 user guide for more information.</p>
+<p><strong>Connecting the SD Card and PCIe Components</strong></p>
+<p>Insert the SD card into the SD card socket on the VPK120 board.</p>
+<p>Connect the PCIe slot of the X-PCIE-04 card to the PCIe edge connector on the VPK120 board.</p>
+<p>In this example design, the CPM5 preset is selected as “CPM5 PCIe Controller0.” PCIe Controller0 drives Quad 102 and Quad 103 lanes, landing on Lane 8-Lane 15 of the VPK120 board. Therefore, an external lane shifter card (X-PCIE-04) is needed to shift the “Lane 8-Lane 15” signals to “Lane 0-Lane 7.”</p>
+<img alt="../../../_images/img_36.jpg" src="../../../_images/img_36.jpg" />
+<p>If PCIe Controller1 is used, it drives Quad 104 and Quad 105 lanes, landing on Lane 0-Lane 7 of the VPK120 board. In this case, the additional X-PCIE-04 lane-shifter card is not needed.</p>
+<p><strong>Connecting Other Components</strong></p>
+<ul class="simple">
+<li><p>Connect the other end of the X-PCIE-04 card to the PCIe slot on the solder side (back/under side) of the X-PCIE-03 card.</p></li>
+<li><p>Connect the M.2 PCIe carrier card assembly with SSD into the PCIe slot on the component side (top/front side) of the X-PCIE-03.</p></li>
+<li><p>Assuming use of a modular ATX power supply to provide PCIe AUXPWR to the X-PCIE-03, connect the main “24-pin ATX” cable assembly and one “6+2 PCIe” cable assembly to the PSU. Also, connect the jumper bridge to the free end of the “24-pin ATX” cable. The free end of the “6+2 PCIe” cable assembly provides PCIe AUXPWR.</p></li>
+<li><p>Connect the DC power brick supplied with the VPK120 to J16 on the VPK120 board.</p></li>
+<li><p>Connect the ATX power supply AUXPWR cable to the X-PCIE-03 at J5.</p></li>
+<li><p>Connect the USB cable provided with the VPK120 to J344, and then to an available USB port on the PC.</p></li>
+<li><p>Connect the DC power brick and the ATX power supply to AC power.</p></li>
+</ul>
+<p>The following image shows the final test setup:</p>
+<img alt="../../../_images/img_37.jpg" src="../../../_images/img_37.jpg" />
+<p>Once all connections are made, open the Putty application on the connected machine. Select the connection type as “Serial” and choose the appropriate COM port number. For “Speed,” select 115200. After clicking “Open,” a terminal window will appear.</p>
+<img alt="../../../_images/img_38.jpg" src="../../../_images/img_38.jpg" />
+<p><strong>Powering On the VPK120</strong></p>
+<p>The system is now ready to be powered on. Ensure that the power cables are plugged in, and that the proper power supply units are turned on. To boot the system, flip the switch next to the 6-pin power connector on the VPK120.</p>
+</div>
+<div class="section" id="interacting-with-petalinux">
+<h2>Interacting with PetaLinux<a class="headerlink" href="#interacting-with-petalinux" title="Permalink to this heading">¶</a></h2>
+<p><strong>Boot Process</strong></p>
+<p>Once the system begins booting, the terminal will start showing information about the boot process of the VPK120. Eventually, the user will be automatically logged in as the root user in Linux.</p>
+<p><strong>Driver Initialization</strong></p>
+<p>Below are print messages that show the “Driver Initialization” portion of the kernel console output.</p>
+<img alt="../../../_images/img_411.jpg" src="../../../_images/img_411.jpg" />
+<p><strong>Verifying PCIe Devices</strong></p>
+<p>To verify if the Linux OS can detect the connected PCIe devices, the following command should be entered in the terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>lspci
+</pre></div>
+</div>
+<p>Two lines of output should appear—one for the X-PCIe adapter and one for the NVMe drive connected.</p>
+<img alt="../../../_images/img_39.jpg" src="../../../_images/img_39.jpg" />
+<p>For more detailed information about each PCIe device, the following commands can be used:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>lspci<span class="w"> </span>-vvvs<span class="w"> </span><span class="m">00</span>:00.0<span class="w">  </span><span class="c1"># For the Xilinx device</span>
+lspci<span class="w"> </span>-vvvs<span class="w"> </span><span class="m">01</span>:00.0<span class="w">  </span><span class="c1"># For the NVMe device</span>
+</pre></div>
+</div>
+<p>The system should have automatically mounted the drive. The result of the <code class="docutils literal notranslate"><span class="pre">lsblk</span></code> command is shown in the image below:</p>
+<img alt="../../../_images/img_40.jpg" src="../../../_images/img_40.jpg" />
+<p><strong>Performing I/O Tests</strong></p>
+<p>To measure the drive’s performance, I/O tests can be performed.</p>
+<p><strong>Testing Write Speed</strong></p>
+<p>To test the drive’s write speed, enter the following command into the terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sync<span class="p">;</span><span class="w"> </span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/dev/zero<span class="w"> </span><span class="nv">of</span><span class="o">=</span>tempfile<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>1M<span class="w"> </span><span class="nv">count</span><span class="o">=</span><span class="m">1024</span><span class="p">;</span><span class="w"> </span>sync
+</pre></div>
+</div>
+<p>This command copies 1GB of data and outputs the write speed of the drive.</p>
+<p><strong>Testing Read Speed</strong></p>
+<p>To test the read speed, clear the cache first and then run a similar command. Enter the following in this order:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>/sbin/sysctl<span class="w"> </span>-w<span class="w"> </span>vm.drop_caches<span class="o">=</span><span class="m">3</span>
+dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>tempfile<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/dev/null<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>1M<span class="w"> </span><span class="nv">count</span><span class="o">=</span><span class="m">1024</span>
+</pre></div>
+</div>
+<p>This command outputs the read speed for a 1GB file copy and shows the speed of this operation. The commands create a 1GB file called <code class="docutils literal notranslate"><span class="pre">tempfile</span></code> to measure read and write speeds.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          
+				  
+				  <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tactical_patch_requirement.html" class="btn btn-neutral float-left" title="Tactical Patch Requirement" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="supporting_documentation.html" class="btn btn-neutral float-right" title="Supporting Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021-2022, Advanced Micro Devices, Inc.
+      <span class="lastupdated">Last updated on October 24, 2022.
+      </span></p>
+  </div>
+
+
+
+										<div class="aem-Grid aem-Grid--16">
+											<div class="aem-GridColumn aem-GridColumn--xxxlarge--none aem-GridColumn--xsmall--16 aem-GridColumn--offset--xsmall--0 aem-GridColumn--xlarge--none aem-GridColumn--xxlarge--none aem-GridColumn--default--none aem-GridColumn--offset--large--1 aem-GridColumn--xlarge--12 aem-GridColumn--offset--default--0 aem-GridColumn--xxlarge--10 aem-GridColumn--offset--xlarge--2 aem-GridColumn--offset--xxlarge--3 aem-GridColumn--offset--xxxlarge--4 aem-GridColumn--xsmall--none aem-GridColumn--large--none aem-GridColumn aem-GridColumn--large--14 aem-GridColumn--xxxlarge--8 aem-GridColumn--default--16">
+												<div class="container-fluid sub-footer">
+
+													                    <div class="row">
+                        <div class="col-xs-24">
+                          <p><a target="_blank" href="https://www.amd.com/en/corporate/copyright">Terms and Conditions</a> | <a target="_blank" href="https://www.amd.com/en/corporate/privacy">Privacy</a> | <a target="_blank" href="https://www.amd.com/en/corporate/cookies">Cookie Policy</a> | <a target="_blank" href="https://www.amd.com/en/corporate/trademarks">Trademarks</a> | <a target="_blank" href="https://www.amd.com/system/files/documents/statement-human-trafficking-forced-labor.pdf">Statement on Forced Labor</a> | <a target="_blank" href="https://www.amd.com/en/corporate/competition">Fair and Open Competition</a> | <a target="_blank" href="https://www.amd.com/system/files/documents/amd-uk-tax-strategy.pdf">UK Tax Strategy</a> | <a target="_blank" href="https://docs.xilinx.com/v/u/9x6YvZKuWyhJId7y7RQQKA">Inclusive Terminology</a> | <a href="#cookiessettings" class="ot-sdk-show-settings">Cookies Settings</a></p>
+                        </div>
+                    </div>
+												</div>
+											</div>
+										</div>
+										
+</br>
+
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

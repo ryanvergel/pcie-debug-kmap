@@ -39,12 +39,16 @@ PCIe Debug K-Map
    :caption: QDMA
 
    docs/QDMA_Subsystem_for_PCIExpress_IP_Driver/index
+   docs/QDMA_Subsystem_for_PCIExpress_IP_Driver/qdma_conceptual_topics/index
+   docs/QDMA_Subsystem_for_PCIExpress_IP_Driver/qdma_debug_topics/index
 
 .. toctree::
    :maxdepth: 20
-   :caption: PS/PL PCIe RC Drivers
+   :caption: Embedded PCI Express
 
    docs/PS_PCIe_PL_PCIe_Root_Port_Driver/index
+   docs/PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM5_PCIe_Root_Port_Design_Linux/index
+   docs/PS_PCIe_PL_PCIe_Root_Port_Driver/MPSoC_PL_XDMA_Bridge_RC_Design_Bare_Metal/index
    
 
 

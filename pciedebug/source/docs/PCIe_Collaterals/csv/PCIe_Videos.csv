@@ -1,6 +1,4 @@
 PCIe Videos
-Xilinx UltraScale+ PCIe Gen3 x16 hardened IP passes PCI SIG compliance test: See it now on video running at 100Gbps+
-https://forums.xilinx.com/t5/Xcell-Daily-Blog/Xilinx-UltraScale-PCIe-Gen3-x16-hardened-IP-passes-PCI-SIG/ba-p/694911
 AXI PCIe with MIG on a KCU105 using WinDriver from Jungo Connectivity
 http://www.xilinx.com/video/fpga/ultrascale-designs-fast-ipi-ddr4-pcie-windriver.html
 How to create a PCI Express Design in an UltraScale FPGA:
@@ -27,17 +25,3 @@ Debugging at Device Startup:
 https://www.youtube.com/watch?v=dt3YTlWfeHw&list=PL35626FEF3D5CB8F2&index=104
 Tandem Configuration of 7 Series Devices:
 https://www.youtube.com/watch?v=N5OVPtSTwuA
-Xilinx QDMA Linux Kernel Drive Usage Demo
-https://youtu.be/c2J89liXHYA
-Xilinx QDMA DPDK Driver Usage Demo
-https://youtu.be/RYozp-DmwSk
-Generating and Implementing Xilinx PCIe Example Design for VCU118 Development Board in Vivado 2019.2
-https://youtu.be/HJUARBawyqw
-Generating Xilinx DMA Subsystem for PCI Express (XDMA) Example Design for VCU118 in Vivado 2019.2
-https://youtu.be/x0NjX-Zzg4k
-Generating QDMA Subsystem for PCI Express v4.0 Example Design for U200 Board in Vivado 2020.1
-https://youtu.be/eSJc6TWGAFI 
-Versal ACAP: PCI Express
-https://www.xilinx.com/video/acap/versal-acap-live-pci-express.html
-Versal Premium series: PCIe Gen5
-https://www.xilinx.com/video/acap/pcie-gen5.html

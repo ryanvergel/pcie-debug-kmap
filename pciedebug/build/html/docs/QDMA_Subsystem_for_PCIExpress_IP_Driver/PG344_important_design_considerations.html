@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+<!-- OneTrust Cookies Consent Notice start for xilinx.github.io -->
+
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" data-document-language="true" type="text/javascript" charset="UTF-8" data-domain-script="03af8d57-0a04-47a6-8f10-322fa00d8fc7" ></script>
+<script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end for xilinx.github.io -->
+<!-- Google Tag Manager -->
+<script type="text/plain" class="optanon-category-C0002">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5RHQV7');</script>
+<!-- End Google Tag Manager -->
+  <title>Important Design Considerations from PG344 &mdash; PCIe Debug K-Map 1.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="QDMA Conceptual Topics" href="qdma_conceptual_topics/index.html" />
+    <link rel="prev" title="Important Design Considerations from PG302" href="PG302_important_design_considerations.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5RHQV7" height="0" width="0" style="display:none;visibility:hidden" class="optanon-category-C0002"></iframe></noscript>
+<!-- End Google Tag Manager --> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+            <a href="../../index.html" class="icon icon-home"> PCIe Debug K-Map
+            <img src="../../_static/xilinx-header-logo.svg" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">PCIe Debug (General)</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../PCIe_Collaterals/index.html">PCIe Collaterals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PCIe_Common_Issues/index.html">PCIe Common Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PCIe_Debug_General_Techniques/index.html">PCIe General Debug Techniques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Link_Training/index.html">Link Training Issue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Simulation_Issue/index.html">Simulation Issue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Interrupt/index.html">Interrupt Issue</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Versal ACAP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Versal_ACAP_CPM_Mode_for_PCI_Express/index.html">Versal ACAP CPM Mode for PCI Express</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Versal_ACAP_Integrated_Block_for_PCI_Express/index.html">Versal ACAP Integrated Block for PCI Express</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">UltraScale+</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../UltraScale%2B_Devices_Integrated_Block_for_PCIExpress/index.html">UltraScale+ Devices Integrated Block for PCIExpress</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">XDMA/Bridge Subsystem</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../DMA_Bridge_Subsystem_for_PCI_Express_XDMA_IP_Driver/index.html">DMA/Bridge Subsystem for PCI Express (XDMA IP/Driver)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DMA_Bridge_Subsystem_for_PCI_Express_Bridge_IP_Endpoint/index.html">DMA/Bridge Subsystem for PCI Express (Bridge IP Endpoint)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">QDMA</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">QDMA Subsystem for PCIExpress (IP/Driver)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="qdma_debug_flow/index.html">QDMA Debug Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qdma_debug_flow/src/debug_gotchas.html">Debug Gotchas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debug_faq.html">General FAQs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="links_docs_misc.html">Documents and Debug Collaterals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PG302_important_design_considerations.html">Important Design Considerations from PG302</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Important Design Considerations from PG344</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="qdma_conceptual_topics/index.html">QDMA Conceptual Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qdma_debug_topics/index.html">QDMA Debug Topics</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Embedded PCI Express</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../PS_PCIe_PL_PCIe_Root_Port_Driver/index.html">Documentation &amp; Debugging Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM5_PCIe_Root_Port_Design_Linux/index.html">Versal CPM5 PCIe Root Port Design (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PS_PCIe_PL_PCIe_Root_Port_Driver/MPSoC_PL_XDMA_Bridge_RC_Design_Bare_Metal/index.html">MPSoC PL XDMA Bridge Bare Metal Root Complex Design</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: black" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PCIe Debug K-Map</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">QDMA Subsystem for PCIExpress (IP/Driver)</a> &raquo;</li>
+      <li>Important Design Considerations from PG344</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/QDMA_Subsystem_for_PCIExpress_IP_Driver/PG344_important_design_considerations.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="important-design-considerations-from-pg344">
+<span id="pg344-important-design-considerations"></span><h1>Important Design Considerations from PG344<a class="headerlink" href="#important-design-considerations-from-pg344" title="Permalink to this heading">¶</a></h1>
+<div class="introduction docutils container">
+<p>When tackling design issues, navigating a lengthy product guide can be overwhelming. To streamline your troubleshooting process, this article lists essential design considerations directly from the product guide, highlighting key points to keep in mind. This article condenses over 200 pages into a focused, 10-12 page summary, making it easier to access the most relevant information quickly. For full details, be sure to click the provided link to explore each consideration further in the original product guide.</p>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Resets?tocId=h1v7mXtUbwccVJ7YmHm9Jg">Resets</a></p>
+<ul class="simple">
+<li><p>If your board is designed to use the same PCIe edge connectors to operate with CPM and PL PCIE, then AMD recommend using PS reset using the Control Interface and Processing System (CIPS) IP core.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Descriptor-Engine?tocId=zPLzp4_2KsOEq1OQBKu9mA">Descriptor Engine</a></p>
+<ul class="simple">
+<li><p>The descriptor engine will have only one DMA read outstanding per queue at a time and can read as many descriptors as can fit in a queue is associated with interrupt aggregation, AMD recommends that the status descriptor be turned off, and instead the DMA status be received from the interrupt aggregation ring.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/H2C-Stream-Engine?tocId=8B1g_MoJi9B~JYNKl5PE8w">H2C Stream Engine</a></p>
+<ul class="simple">
+<li><p>The total length of all descriptors put together must be less than 64 KB.</p></li>
+<li><p>A packet with multiple descriptors straddling is not allowed due to the lack of per queue storage.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/C2H-Stream-Engine?tocId=kLLbtbEfgONrsb5bysKeHQ">C2H Stream Engine</a></p>
+<ul class="simple">
+<li><p>In Simple Bypass Mode, the engine does not track anything for the queue, and the user logic can define its own method to receive descriptors. The user logic is then responsible for delivering the packet and associated descriptor through the simple bypass interface.</p></li>
+<li><p>The ordering of the descriptors fetched by a queue in the bypass interface and the C2H stream interface must be maintained across all queues in bypass mode.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI-Memory-Mapped-Bridge-Master-Interface">AXI Memory Mapped Bridge Master Interface</a></p>
+<ul class="simple">
+<li><p>The AXI MM Bridge Master interface is used for high bandwidth access to AXI Memory Mapped space from the host. The interface supports up to 32 outstanding AXI reads and writes. One or more PCIe BAR of any physical function (PF) or virtual function (VF) can be mapped to the AXI-MM bridge master interface. This selection must be made prior to design compilation.</p></li>
+<li><p>Note that all VFs belonging to the same PF share the same PCIe to AXI translation vector. Therefore, the AXI address space of each VF is concatenated together. Use VFG_OFFSET to calculate the actual starting address of AXI for a particular VF.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI-Memory-Mapped-Bridge-Slave-Interface">AXI Memory Mapped Bridge Slave Interface</a></p>
+<ul class="simple">
+<li><p>The AXI-MM Bridge Slave interface is used for high bandwidth memory transfers between the user logic and the Host. AXI to PCIe translation is supported through the AXI to PCIe BARs. The interface will split requests as necessary to obey PCIe MPS and 4 KB boundary crossing requirements. Up to 32 outstanding read and write requests are supported.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Interrupt-Module">Interrupt Module</a></p>
+<ul class="simple">
+<li><p>Queue-based interrupts and user interrupts are allowed on PFs and VFs, but error interrupts are allowed only on PFs.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/General-Design-of-Queues">General Design of Queues</a></p>
+<ul class="simple">
+<li><p>PIDX update should never be equal to CIDX. For this case, if CIDX is 0, the maximum PIDX update would be 6.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/QDMA-Subsystem-Limitations">QDMA Subsystem Limitations</a></p>
+<ul class="simple">
+<li><p>Use AXI SmartConnect to support Narrow Burst.</p></li>
+<li><p>ECC and Slave Narrow Burst support is mutually exclusive.</p></li>
+<li><p>If you want an ECC feature, the recommendation is to up-size your AXI Master externally.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Performance-and-Resource-Utilization?tocId=6QfBEhQFba9swgGuwrX89A">Performance and Resource Utilization</a></p>
+<ul class="simple">
+<li><p>Following are the QDMA register settings recommended by AMD for better performance. Performance numbers can vary based on systems and OS used.</p></li>
+<li><p>AMD recommends that you limit the total outstanding descriptor fetch to be less than 8 KB on the PCIe. For example, limit the outstanding credits across all queues to 512 for a 16B descriptor.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Descriptor-Context">Descriptor Context</a></p>
+<ul class="simple">
+<li><p>After the queue is enabled, the software context should only be updated through the direct mapped address space to update the Producer Index and Interrupt Arm® bit, unless the queue is being disabled.</p></li>
+<li><p>The hardware context and credit context contain only status. It is only necessary to interact with the hardware and credit contexts as part of queue initialization to clear them to all zeros.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Software-Descriptor-Context-Structure-0x0-C2H-and-0x1-H2C">Software Descriptor Context Structure 0x0-C2H and 0x1-H2C</a></p>
+<ul class="simple">
+<li><p>If bypass mode is not enabled, 32B is required for Memory Mapped DMA, 16B is required for H2C Stream DMA, and 8B is required for C2H Stream DMA.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Credit-Descriptor-Context-Structure">Credit Descriptor Context Structure</a></p>
+<ul class="simple">
+<li><p>The credit descriptor context is for internal DMA use only and it can be read from the indirect bus for debug.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Descriptor-Fetch">Descriptor Fetch</a></p>
+<ul class="simple">
+<li><p>If fetch crediting is enabled, the user logic is required to provide a credit for each descriptor that should be fetched.</p></li>
+<li><p>If queue size is 8, which contains the entry index 0 to 7, the last entry (index 7) is reserved for status. This index should never be used for the PIDX update, and the PIDX update should never be equal to CIDX. For this case, if CIDX is 0, the maximum PIDX update would be 6.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Internal-Mode-Writeback-and-Interrupts-AXI-MM-and-H2C-ST">Internal Mode Writeback and Interrupts AXI-MM and H2C-ST</a></p>
+<ul class="simple">
+<li><p>It is recommended the wbi_chk bit be set for all internal mode operation, including when interval mode is enabled.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Descriptor-Bypass-Mode?tocId=OnYtjyqAgfk9Lr7lh5_z4w">Descriptor Bypass Mode</a></p>
+<ul class="simple">
+<li><p>To perform DMA operations, the user logic drives descriptors (must be QDMA format) into the descriptor bypass input interface.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Descriptor-Bypass-Mode-Writeback/Interrupts">Descriptor Bypass Mode Writeback/Interrupts</a></p>
+<ul class="simple">
+<li><p>Once a descriptor with the sdi bit is sent, another irq_arm assertion must be observed before another descriptor with the sdi bit can be sent.</p></li>
+<li><p>If you set the sdi bit when the arm bit is not properly observed, an interrupt might or might not be sent, and software might hang indefinitely waiting for an interrupt.</p></li>
+<li><p>When interrupts are not enabled, setting the sdi bit has no restriction. However, excessive writeback events can severely reduce the descriptor engine performance and consume write bandwidth to the host.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Traffic-Manager-Output-Interface">Traffic Manager Output Interface</a></p>
+<ul class="simple">
+<li><p>While the tm_dsc_sts interface is a valid/ready interface, it should not be back-pressured for optimal performance. Since multiple events trigger a tm_dsc_sts cycle, if internal buffering is filled, descriptor fetching will be halted to prevent generation of new events.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Errors?tocId=tsnP~q1s6VOFgCB4k~4Hlw">Errors</a></p>
+<ul class="simple">
+<li><p>After the queue is invalidated, if there is an error you can determine the cause by reading the error registers and context for that queue. You must clear and remove that queue, and then add the queue back later when needed.</p></li>
+<li><p>If the descriptor fetch itself encounters an error, the descriptor will be marked with an error bit. If the error bit is set, the contents of the descriptor should be considered invalid.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Memory-Mapped-DMA">Memory Mapped DMA</a></p>
+<ul class="simple">
+<li><p>PCIe-to-PCIe, and AXI MM-to-AXI MM DMAs are not supported.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Operation">Operation</a></p>
+<ul class="simple">
+<li><p>Any descriptors that have already started the source buffer fetch will continue to be processed. Reassertion of the run bit will result in resetting internal engine state and should only be done when the engine is quiesced.</p></li>
+<li><p>Once sufficient read completion data is received, the write request will be issued to the destination interface in the same order that the read data was requested. Before the request is retired, the destination interfaces must accept all the write data and provide a completion response.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI-Memory-Mapped-Descriptor-for-H2C-and-C2H-32B">AXI Memory Mapped Descriptor for H2C and C2H 32B</a></p>
+<ul class="simple">
+<li><p>Internal mode memory mapped DMA must configure the descriptor queue to be 32B and follow the above descriptor format. In bypass mode, the descriptor format is defined by the user logic, which must drive the H2C or C2H MM bypass input port.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Internal-and-Bypass-Modes">Internal and Bypass Modes</a></p>
+<ul class="simple">
+<li><p>If the packet is present in host memory in non-contiguous space, then it has to be defined by more than one descriptor, and this requires that the queue be programmed in bypass mode.</p></li>
+<li><p>When fcrd_en is enabled in the software context, DMA will wait for the user application to provide credits. When fcrd_en is not set, the DMA uses a pointer update, fetches descriptors and sends the descriptor out. The user application should not send in credits.</p></li>
+<li><p>Because the bypass mode allows a packet to span multiple descriptors, the user logic needs to indicate to QDMA which descriptor marks the Start-Of-Packet (SOP) and which marks the End-Of-Packet (EOP).</p></li>
+<li><p>At the QDMA H2C Stream bypass-in interface, among other pieces of information, the user logic needs to provide: Address, Length, SOP, and EOP. It is required that once the user logic feeds SOP descriptor information into QDMA, it must eventually feed EOP descriptor information also.</p></li>
+<li><p>Descriptors for these multi-descriptor packets must be fed in sequentially. Other descriptors not belonging to the packet must not be interleaved within the multidescriptor packet.</p></li>
+<li><p>The user logic must accumulate the descriptors up to the EOP descriptor, before feeding them back to QDMA. Not doing so can result in a hang. The QDMA will generate a TLAST at the QDMA H2C AXI4-Stream data output once it issues the last beat for the EOP descriptor. This is guaranteed because the user is required to submit the descriptors for a given packet sequentially.</p></li>
+<li><p>The Stream engine is designed to saturate PCIe for packet sizes as low as 128B, so AMD recommends that you restrict the packet size to be host page size or maximum transfer unit as required by the user application.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/H2C-Stream-Descriptor-16B">H2C Stream Descriptor 16B</a></p>
+<ul class="simple">
+<li><p>This H2C descriptor format is only applicable for internal mode.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Descriptor-Metadata">Descriptor Metadata</a></p>
+<ul class="simple">
+<li><p>Passing metadata on the tuser is not supported for a queue in bypass mode and consequently there is no input to provide the metadata on the QDMA H2C Stream bypass-in interface.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Zero-Length-Descriptor">Zero Length Descriptor</a></p>
+<ul class="simple">
+<li><p>The user logic must set both the SOP and EOP for a zero byte descriptor. If not done, an error will be flagged by the H2C Stream Engine.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/H2C-Stream-Status-Descriptor-Writeback">H2C Stream Status Descriptor Writeback</a></p>
+<ul class="simple">
+<li><p>The format of the H2C-ST status descriptor written to the descriptor ring is different from that written into the interrupt coalesce entry.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Handling-Descriptors-With-Errors?tocId=tis~ohdvqbaLPsOGV4YzOQ">Handling Descriptors With Errors</a></p>
+<ul class="simple">
+<li><p>For a queue in bypass mode, it is the responsibility of the user logic to not issue a batch of descriptors with an error descriptor. Instead, it must send just one descriptor with error input asserted on the H2C Stream bypass-in interface and set the SOP, EOP, no_dma signal, and sdi or mrkr-req signal to make the H2C Stream Engine send a writeback to Host.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/C2H-Stream-Engine?tocId=rz5SyePZBHI8hPsLfqBusg">C2H Stream Engine</a></p>
+<ul class="simple">
+<li><p>The buffer size is fixed per queue basis.</p></li>
+<li><p>The QDMA requires software to post full ring size so the C2H stream engine can fetch the needed number of descriptors for all received packets.</p></li>
+<li><p>For performance reasons, the software is required to post the PIDX as soon as possible to ensure there are always enough descriptors in the ring.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/C2H-Prefetch-Engine">C2H Prefetch Engine</a></p>
+<ul class="simple">
+<li><p>sw_crdt (Software credit): The software must initialize it to 0 and then treat it as read-only.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/C2H-Stream-Modes">C2H Stream Modes</a></p>
+<ul class="simple">
+<li><p>The descriptors from the C2H bypass input interfaces have one interface for both simple mode and cache mode (note that both simple bypass and cache bypass use the same interface).</p></li>
+<li><p>If you already have the descriptor cached on the device, there is no need to fetch one from the host and you should follow the simple bypass mode for the C2H Stream application. In simple bypass mode, do not provide credits to fetch the descriptor, and instead, you need to send in the descriptor on the descriptor bypass interface.</p></li>
+<li><p>AXI4-Stream C2H Simple Bypass mode and Cache Bypass mode both use same bypass in ports (c2h_byp_in_st_csh_* ports).</p></li>
+<li><p>For simple bypass transfer to work, a prefetch tag is needed and it can be fetched from the QDMA IP.</p></li>
+<li><p>The user application must request a prefetch tag before sending any traffic for a simple bypass queue through the C2H ST engine. Invalid queues or non-bypass queues should not request any tags using this method, as it might reduce performance by freezing tags that never get used.</p></li>
+<li><p>The prefetch tag needs to be reserved upfront before any traffic can start. One prefetch tag per target host is required.</p></li>
+<li><p>In most applications, one prefetch tag for a host is needed. In Simple Bypass mode, the tag is not tied to any descriptor ring. For the queues that share the same prefetch tag, the data and descriptors need to come in the same order.</p></li>
+<li><p>For Simple Bypass, the data and descriptors are both controlled by the user, so they need to guarantee the order is maintained. For example when the data stream has packets in the order of Q0, Q1, and Q2, on descriptor input, you cannot send Q1, Q2, Q0 etc. The order needs to be maintained.</p></li>
+<li><p>The user application writes to the MDMA_C2H_PFCH_BYP_QID (0x1408) register with the qid for a simple bypass queue, then reads from MDMA_C2H_PFCH_BYP_TAG (0x140C) register to retrieve the corresponding prefetch tag. This tag must be driven with all bypass_in descriptors for as long as the current qid is valid. If a current qid is invalidated, a new prefetch tag must be requested with a valid qid.</p></li>
+<li><p>The prefetch tag points to the CAM that stores the active queues in the prefetch engine. Also the qid that was used to prefetch tag needs to be used as the qid for all simple bypass packets. Assign the qid to dma_s_axis_c2h_ctrl_qid.</p></li>
+<li><p>The prefetch tag and the qid that was used to fetch the tag should be used for all simple bypass packets. This information needs to be communicated to the user side.</p></li>
+<li><p>The c2h_byp_in_st_csh_pfch_tag[6:0] port can have the same prefetch_tag for as long as the original qid is valid.</p></li>
+<li><p>No sequence is required between descriptor bypass in, data payload, and completion packets.</p></li>
+<li><p>When prefetch mode is enabled, the user application cannot send credits as input in QDMA Descriptor Credit input ports.</p></li>
+<li><p>In cache bypass mode, prefetch tag is maintained by the IP internally. Signal c2h_byp_out_pfch_tag[6:0] should be looped back as an input c2h_byp_in_st_csh_pfch_tag[6:0]. The prefetch tag points to the cam that stores the active queues in the prefetch engine.</p></li>
+<li><p>No sequence is required between payload and completion packets.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Handling-Descriptors-With-Errors?tocId=GpF6nsAjv5m5zjd_It3VnA">Handling Descriptors With Errors</a></p>
+<ul class="simple">
+<li><p>For a queue in bypass mode, it is the responsibility of the user logic to not issue a batch of descriptors with an error descriptor. Instead, it must send just one descriptor with error input asserted on the C2H Stream bypass-in interface and set the SOP, EOP, no_dma signal, and sdi or mrkr_req signal to make the C2H Stream Engine send a writeback to Host.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Completion-Engine?tocId=Ceq2lA4K4EK694IQPAqrAg">Completion Engine</a></p>
+<ul class="simple">
+<li><p>Although not a requirement, a CMPT is typically used with a C2H queue.</p></li>
+<li><p>The user-defined portion of the CMPT packet typically needs to specify the length of the data packet transferred and whether or not descriptors were consumed as a result of the data packet transfer.</p></li>
+<li><p>Maximum buffer size register 0xB50 bits[31:26] is programmed to 0 (default value). This value might result in an overflow depending on the simulator or the synthesis tool used. To avoid overflow, set 0xB50 bits[31:26] to maximum value of 63.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Completion-Context-Structure">Completion Context Structure</a></p>
+<ul class="simple">
+<li><p>baddr4_low: Since the minimum alignment supported is 64B in this case, this field must be 0.</p></li>
+<li><p>pidx: Completion Ring Producer Index. This is a field written by the hardware. The software must initialize it to 0 and then treat it as read-only. Color bit to be used on Completion.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Completion-Status-Structure">Completion Status Structure</a></p>
+<ul class="simple">
+<li><p>In order to make the QDMA write Completion Status to the Completion ring, Completion Status must be enabled in the Completion context.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Completion-Status/Interrupt-Moderation">Completion Status/Interrupt Moderation</a></p>
+<ul class="simple">
+<li><p>When in TRIGGER_EVERY, TRIGGER_USER, and TRIGGER_USER_COUNT mode, the software must read all the Completion entries in the Completion ring as indicated by an interrupt (or a Completion Status write).</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Address-Translation">Address Translation</a></p>
+<ul class="simple">
+<li><p>When this option is selected, one full 64-bit BAR space is given for slave data transfer. You must set up any address translation if needed. If No Address Translation is not selected, DMA will do address translation.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Slave-Address-Translation-Examples">Slave Address Translation Examples</a></p>
+<ul class="simple">
+<li><p>The slave bridge does not support narrow burst AXI transfers.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Legacy-Interrupt">Legacy Interrupt</a></p>
+<ul class="simple">
+<li><p>To enable the legacy interrupt, the software needs to set the en_lgcy_intr bit in the register QDMA_GLBL_GLBL_INTERRUPT_CFG (0x2C4).</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Function-Map-Table">Function Map Table</a></p>
+<ul class="simple">
+<li><p>Along with FMAP table programming in the IP, you must program the FMAP table in the Mailbox IP. This is needed for function level reset (FLR) procedure.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Context-Programming">Context Programming</a></p>
+<ul class="simple">
+<li><p>A host profile table context needs to be programmed before any context settings.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Queue-Setup">Queue Setup</a></p>
+<ul class="simple">
+<li><p>If interrupts/status writes are desired (enabled in the Completion Context), an initial Completion CIDX update is required to send the hardware into a state where it is sensitive to trigger conditions. This initial CIDX update is required, because when out of reset, the hardware initializes into an unarmed state.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Host-Profile">Host Profile</a></p>
+<ul class="simple">
+<li><p>Host profile must be programmed to represent root port host. Host profile can be programmed through context programming. Select QDMA_CTXT_SELC_HOST_PROFILE (4’hA) in QDMA_IND_CTXT_CMD.</p></li>
+<li><p>H2C AXI4-MM steering bit and C2H AXI4-MM steering bit should be set to 0s. If not, DMA AXI4-MM transfers do not work. For most cases, host profile context structure is all 0s, and host profile must still be programmed to represent a host.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Resets?tocId=fmctYn5tKkX~OxMI1rYFeg">Resets</a></p>
+<ul class="simple">
+<li><p>Reset the QDMA logic through the soft_reset_n port. This port needs to be held in reset for a minimum of 100 clock cycles (axi_aclk cycles). This does not reset PCIe hard block. It resets only the DMA portion of logic. This reset can be asserted if there is a DMA hang or some error condition.</p></li>
+<li><p>The use cases that prompt the use of soft_reset include:
+- DMA hangs and user is not getting proper values.
+- DMA transfers have errors, but the PCIe links are good. DMA records some asynchronous error.</p></li>
+<li><p>After soft_reset, you must reinitialize the queues and program all queue context.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Expansion-ROM">Expansion ROM</a></p>
+<ul class="simple">
+<li><p>The maximum size for the Expansion ROM BAR should be no larger than 16 MB. Selecting an address space larger than 16 MB can result in a non-compliant core.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Data-Path-Errors">Data Path Errors</a></p>
+<ul class="simple">
+<li><p>Any DMA during and after the parity error should be considered invalid. If there is a parity error and transfer hangs or stops, the DMA will log the error. You must investigate and fix the parity issues.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI-Bridge-Slave-Ports">AXI Bridge Slave Ports</a></p>
+<ul class="simple">
+<li><p>The valid data identified by s_axib_wstrb must be continuous from the first byte enable to the last byte enable.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI4-Stream-H2C-Ports">AXI4 Stream H2C Ports</a></p>
+<ul class="simple">
+<li><p>m_axis_h2c_tuser_err : If set, indicates the packet has an error. The error could come from the PCIe, or the error could be in the DMA transfer. AMD recommends that you look at the error registers and context for details.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI4-Stream-C2H-Ports">AXI4 Stream C2H Ports</a></p>
+<ul class="simple">
+<li><p>s_axis_c2h_ctrl_len [15:0] : ctrl_len is in bytes and should be valid in first beat of the packet.</p></li>
+<li><p>s_axis_c2h_mty [5:0] : Empty byte should be set in last beat.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/AXI4-Stream-C2H-Completion-Ports">AXI4 Stream C2H Completion Ports</a></p>
+<ul class="simple">
+<li><p>HAS_PLD. The CMPT packet has a corresponding payload packet, and it needs to wait for the payload packet to be sent before sending the CMPT packet.</p></li>
+<li><p>s_axis_c2h_cmpt_tvalid must be asserted until s_axis_c2h_cmpt_tready is asserted.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/VDM-Ports">VDM Ports</a></p>
+<ul class="simple">
+<li><p>When this interface is not used, Ready must be tied-off to 1.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/QDMA-Descriptor-Bypass-Input-Ports">QDMA Descriptor Bypass Input Ports</a></p>
+<ul class="simple">
+<li><p>For performance reasons, AMD recommends that this port be asserted once in 32 or 64 descriptors and assert at the last descriptor if there are no more descriptors left.</p></li>
+<li><p>If h2c_byp_in_st_no_dma is set, then both h2c_byp_in_st_sop and h2c_byp_in_st_eop must be set.</p></li>
+<li><p>h2c_byp_in_mm_len[27:0] : The DMA data length. The upper 12 bits must be tied to 0. Thus only the lower 16 bits of this field can be used for specifying the length.</p></li>
+<li><p>h2c_byp_in_mm_sdi : For performance reasons, AMD recommends that this port be asserted once in 32 or 64 descriptors and be asserted at the last descriptor if there are no more descriptors left.</p></li>
+<li><p>c2h_byp_in_st_csh_pfch_tag[6:0] : In Cache Bypass mode, you must loop back c2h_byp_out_pfch_tag[6:0] to c2h_byp_in_st_csh_pfch_tag[6:0]. In Simple Bypass mode, user needs to pass in the Prefetch tag value from MDMA_C2H_PFCH_BYP_TAG (0x140C) register.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/QDMA-Descriptor-Bypass-Output-Ports">QDMA Descriptor Bypass Output Ports</a></p>
+<ul class="simple">
+<li><p>h2c_byp_out_cidx [15:0] : The User must echo this field back to QDMA when submitting the descriptor on the bypass-in interface.</p></li>
+<li><p>h2c_byp_out_rdy : When this interface is not used, Ready must be tied-off to 1.</p></li>
+<li><p>c2h_byp_out_cidx [15:0] : The User must echo this field back to QDMA when submitting the descriptor on the bypass-in interface.</p></li>
+<li><p>c2h_byp_out_rdy : When this interface is not used, Ready must be tied-off to 1.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/QDMA-Descriptor-Credit-Input-Ports">QDMA Descriptor Credit Input Ports</a></p>
+<ul class="simple">
+<li><p>dsc_crdt_in_vld : When asserted the user must be presenting valid data on the bus and maintain the bus values until both valid and ready are asserted on the same cycle.</p></li>
+<li><p>dsc_crdt_in_fence : The fence bit should only be set for a queue that is enabled, and has both descriptors and credits available, otherwise a hang condition might occur.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/QDMA-Traffic-Manager-Credit-Output-Ports">QDMA Traffic Manager Credit Output Ports</a></p>
+<ul class="simple">
+<li><p>tm_dsc_sts_rdy : When this interface is not used, Ready must be tied-off to 1.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/Queue-Status-Ports">Queue Status Ports</a></p>
+<ul class="simple">
+<li><p>qsts_out_rdy : Ready must be tied to 1 so status output will not be blocked. Even if this interface is not used, the ready port must be tied to 1.</p></li>
+</ul>
+</div>
+<div class="highlight-box admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Link</strong>: <a class="reference external" href="https://docs.amd.com/r/en-US/pg344-pcie-dma-versal/QDMA-PF-Address-Register-Space">QDMA PF Address Register Space</a></p>
+<ul class="simple">
+<li><p>When you generate the IP in default mode, not all registers are exposed. For example, debug registers will be missing. Refer to the qdma_v5_0_pf_registers.csv file to identify the debug registers. To expose all registers, use the following tcl command during IP generation:</p></li>
+<li><p>set_property CONFIG.debug_mode {DEBUG_REG_ONLY} [get_ips qdma_0]</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          
+				  
+				  <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="PG302_important_design_considerations.html" class="btn btn-neutral float-left" title="Important Design Considerations from PG302" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="qdma_conceptual_topics/index.html" class="btn btn-neutral float-right" title="QDMA Conceptual Topics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021-2022, Advanced Micro Devices, Inc.
+      <span class="lastupdated">Last updated on October 24, 2022.
+      </span></p>
+  </div>
+
+
+
+										<div class="aem-Grid aem-Grid--16">
+											<div class="aem-GridColumn aem-GridColumn--xxxlarge--none aem-GridColumn--xsmall--16 aem-GridColumn--offset--xsmall--0 aem-GridColumn--xlarge--none aem-GridColumn--xxlarge--none aem-GridColumn--default--none aem-GridColumn--offset--large--1 aem-GridColumn--xlarge--12 aem-GridColumn--offset--default--0 aem-GridColumn--xxlarge--10 aem-GridColumn--offset--xlarge--2 aem-GridColumn--offset--xxlarge--3 aem-GridColumn--offset--xxxlarge--4 aem-GridColumn--xsmall--none aem-GridColumn--large--none aem-GridColumn aem-GridColumn--large--14 aem-GridColumn--xxxlarge--8 aem-GridColumn--default--16">
+												<div class="container-fluid sub-footer">
+
+													                    <div class="row">
+                        <div class="col-xs-24">
+                          <p><a target="_blank" href="https://www.amd.com/en/corporate/copyright">Terms and Conditions</a> | <a target="_blank" href="https://www.amd.com/en/corporate/privacy">Privacy</a> | <a target="_blank" href="https://www.amd.com/en/corporate/cookies">Cookie Policy</a> | <a target="_blank" href="https://www.amd.com/en/corporate/trademarks">Trademarks</a> | <a target="_blank" href="https://www.amd.com/system/files/documents/statement-human-trafficking-forced-labor.pdf">Statement on Forced Labor</a> | <a target="_blank" href="https://www.amd.com/en/corporate/competition">Fair and Open Competition</a> | <a target="_blank" href="https://www.amd.com/system/files/documents/amd-uk-tax-strategy.pdf">UK Tax Strategy</a> | <a target="_blank" href="https://docs.xilinx.com/v/u/9x6YvZKuWyhJId7y7RQQKA">Inclusive Terminology</a> | <a href="#cookiessettings" class="ot-sdk-show-settings">Cookies Settings</a></p>
+                        </div>
+                    </div>
+												</div>
+											</div>
+										</div>
+										
+</br>
+
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

@@ -94,10 +94,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p class="caption" role="heading"><span class="caption-text">QDMA</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../QDMA_Subsystem_for_PCIExpress_IP_Driver/index.html">QDMA Subsystem for PCIExpress (IP/Driver)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QDMA_Subsystem_for_PCIExpress_IP_Driver/qdma_conceptual_topics/index.html">QDMA Conceptual Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../QDMA_Subsystem_for_PCIExpress_IP_Driver/qdma_debug_topics/index.html">QDMA Debug Topics</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">PS/PL PCIe RC Drivers</span></p>
+<p class="caption" role="heading"><span class="caption-text">Embedded PCI Express</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../PS_PCIe_PL_PCIe_Root_Port_Driver/index.html">Xilinx PCI Express (PS-PCIe/PL-PCIe) Drivers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PS_PCIe_PL_PCIe_Root_Port_Driver/index.html">Documentation &amp; Debugging Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM5_PCIe_Root_Port_Design_Linux/index.html">Versal CPM5 PCIe Root Port Design (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PS_PCIe_PL_PCIe_Root_Port_Driver/MPSoC_PL_XDMA_Bridge_RC_Design_Bare_Metal/index.html">MPSoC PL XDMA Bridge Bare Metal Root Complex Design</a></li>
 </ul>
 
         </div>
@@ -133,7 +137,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><p>Check using ILA if the cfg_ltssm_state signal shows an L0 state (‘h10).</p></li>
 <li><p>If in the L0 state, check if it consistently stays in the L0 state or is going through recovery state continuously.</p></li>
 <li><dl class="simple">
-<dt>Repeatedly going through recovery state indicates a link integrity issue.</dt><dd><ul>
+<dt>Repeatedly going through the recovery state indicates a link integrity issue.</dt><dd><ul>
 <li><p>If it is stable in L0 state, check if PCIe Config Request TLP’s are exchanged and that each Completion TLP is returned.</p></li>
 <li><p>This is part of the PCI enumeration process and must be done within 100ms of the Power Good indication.</p></li>
 <li><p>Try doing a warm reboot and if the device is now detected after a warm reboot, this requirement was violated.</p></li>

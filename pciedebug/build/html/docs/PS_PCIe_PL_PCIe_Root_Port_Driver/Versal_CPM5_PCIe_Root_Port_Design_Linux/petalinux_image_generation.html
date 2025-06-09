@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+<!-- OneTrust Cookies Consent Notice start for xilinx.github.io -->
+
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" data-document-language="true" type="text/javascript" charset="UTF-8" data-domain-script="03af8d57-0a04-47a6-8f10-322fa00d8fc7" ></script>
+<script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end for xilinx.github.io -->
+<!-- Google Tag Manager -->
+<script type="text/plain" class="optanon-category-C0002">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5RHQV7');</script>
+<!-- End Google Tag Manager -->
+  <title>PetaLinux Image Generation &mdash; PCIe Debug K-Map 1.0 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Device Tree Structure" href="device_tree_structure.html" />
+    <link rel="prev" title="Hardware Design Creation" href="hardware_design_creation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5RHQV7" height="0" width="0" style="display:none;visibility:hidden" class="optanon-category-C0002"></iframe></noscript>
+<!-- End Google Tag Manager --> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+            <a href="../../../index.html" class="icon icon-home"> PCIe Debug K-Map
+            <img src="../../../_static/xilinx-header-logo.svg" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">PCIe Debug (General)</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../PCIe_Collaterals/index.html">PCIe Collaterals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PCIe_Common_Issues/index.html">PCIe Common Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PCIe_Debug_General_Techniques/index.html">PCIe General Debug Techniques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Link_Training/index.html">Link Training Issue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Simulation_Issue/index.html">Simulation Issue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Interrupt/index.html">Interrupt Issue</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Versal ACAP</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Versal_ACAP_CPM_Mode_for_PCI_Express/index.html">Versal ACAP CPM Mode for PCI Express</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Versal_ACAP_Integrated_Block_for_PCI_Express/index.html">Versal ACAP Integrated Block for PCI Express</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">UltraScale+</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../UltraScale%2B_Devices_Integrated_Block_for_PCIExpress/index.html">UltraScale+ Devices Integrated Block for PCIExpress</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">XDMA/Bridge Subsystem</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../DMA_Bridge_Subsystem_for_PCI_Express_XDMA_IP_Driver/index.html">DMA/Bridge Subsystem for PCI Express (XDMA IP/Driver)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../DMA_Bridge_Subsystem_for_PCI_Express_Bridge_IP_Endpoint/index.html">DMA/Bridge Subsystem for PCI Express (Bridge IP Endpoint)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">QDMA</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../QDMA_Subsystem_for_PCIExpress_IP_Driver/index.html">QDMA Subsystem for PCIExpress (IP/Driver)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../QDMA_Subsystem_for_PCIExpress_IP_Driver/qdma_conceptual_topics/index.html">QDMA Conceptual Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../QDMA_Subsystem_for_PCIExpress_IP_Driver/qdma_debug_topics/index.html">QDMA Debug Topics</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Embedded PCI Express</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation &amp; Debugging Resources</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Versal CPM5 PCIe Root Port Design (Linux)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="hardware_design_creation.html">Hardware Design Creation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">PetaLinux Image Generation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#launching-petalinux-2024-2">Launching PetaLinux 2024.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-petalinux-project">Creating a PetaLinux Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-the-petalinux-project">Configuring the PetaLinux Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-the-system-image-and-booting">Building the System Image and Booting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="device_tree_structure.html">Device Tree Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ecam_mapping_and_addressing.html">ECAM Mapping and Addressing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tactical_patch_requirement.html">Tactical Patch Requirement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="system_testability_and_setup.html">System Testability and Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supporting_documentation.html">Supporting Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debugging.html">Debugging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../MPSoC_PL_XDMA_Bridge_RC_Design_Bare_Metal/index.html">MPSoC PL XDMA Bridge Bare Metal Root Complex Design</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: black" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">PCIe Debug K-Map</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Versal CPM5 PCIe Root Port Design (Linux)</a> &raquo;</li>
+      <li>PetaLinux Image Generation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/docs/PS_PCIe_PL_PCIe_Root_Port_Driver/Versal_CPM5_PCIe_Root_Port_Design_Linux/petalinux_image_generation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="petalinux-image-generation">
+<span id="ps-pcie-pl-pcie-driver-debug-checklist"></span><h1>PetaLinux Image Generation<a class="headerlink" href="#petalinux-image-generation" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="launching-petalinux-2024-2">
+<h2>Launching PetaLinux 2024.2<a class="headerlink" href="#launching-petalinux-2024-2" title="Permalink to this heading">¶</a></h2>
+<p>To launch PetaLinux 2024.2, source the <cite>settings.sh</cite> script using the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>&lt;path-to-petalinux-install&gt;/2024.2/settings.sh
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-a-petalinux-project">
+<h2>Creating a PetaLinux Project<a class="headerlink" href="#creating-a-petalinux-project" title="Permalink to this heading">¶</a></h2>
+<p>Navigate to a directory where you wish to create a workspace for the PetaLinux project. Use the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>petalinux-create<span class="w"> </span>project<span class="w"> </span>--template<span class="w"> </span>versal<span class="w"> </span>--name<span class="w"> </span>&lt;PROJECT_NAME_HERE&gt;
+</pre></div>
+</div>
+<p>This command creates a workspace directory for the PetaLinux project. All details related to the build, such as the configured device tree and kernel, will be located here. All project modifications will be contained in this directory.</p>
+<p>After creating an empty project, configure this project with the appropriate settings needed for this application.</p>
+<img alt="../../../_images/img_16.jpg" src="../../../_images/img_16.jpg" />
+</div>
+<div class="section" id="configuring-the-petalinux-project">
+<h2>Configuring the PetaLinux Project<a class="headerlink" href="#configuring-the-petalinux-project" title="Permalink to this heading">¶</a></h2>
+<p>For system image, the example design configured in Vivado will be used.</p>
+<ol class="arabic">
+<li><p><strong>Configure the project with the .xsa file from Vivado</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>petalinux-config<span class="w"> </span>--get-hw-description<span class="o">=</span>&lt;PATH_TO_XSA_DIRECTORY&gt;
+</pre></div>
+</div>
+<p>Since there is only one <cite>.xsa</cite> file in the directory, the PetaLinux tool will automatically pick the appropriate file and begin configuration.</p>
+<img alt="../../../_images/img_17.jpg" src="../../../_images/img_17.jpg" />
+</li>
+<li><p><strong>Navigate through the configuration menu</strong>:</p>
+<p>Upon running the above command, a PetaLinux configuration menu will appear. Use the arrow keys to navigate and the <cite>Enter</cite> key to select or perform actions.</p>
+<img alt="../../../_images/img_18.jpg" src="../../../_images/img_18.jpg" />
+</li>
+<li><p><strong>Exit the configuration menu</strong>:</p>
+<p>In this menu, no modifications are needed. To exit:
+- Use the right arrow key to highlight “Exit”.
+- Press <cite>Enter</cite>.
+- When prompted to save changes, select “Yes”.</p>
+<p>The terminal output should resemble the screenshot below:</p>
+<img alt="../../../_images/img_19.jpg" src="../../../_images/img_19.jpg" />
+</li>
+<li><p><strong>Kernel configuration for PCIe and NVME support</strong>:</p>
+<p>To configure the kernel, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>petalinux-config<span class="w"> </span>-c<span class="w"> </span>kernel
+</pre></div>
+</div>
+<p>This opens a kernel configuration menu. Note that it may take some time for the menu to load.</p>
+</li>
+<li><p><strong>Enable PCIe drivers</strong>:</p>
+<ul>
+<li><p>Navigate to “Device Drivers”.</p>
+<img alt="../../../_images/img_20.jpg" src="../../../_images/img_20.jpg" />
+</li>
+<li><p>Select “PCI support”.</p>
+<img alt="../../../_images/img_211.jpg" src="../../../_images/img_211.jpg" />
+</li>
+<li><p>Select “PCI controller drivers”.</p>
+<img alt="../../../_images/img_221.jpg" src="../../../_images/img_221.jpg" />
+</li>
+<li><p>Enable “Xilinx Versal CPM PCI controller”:
+- Hover over the option.
+- Press the spacebar to add an asterisk (<cite>*</cite>).
+- Exit back to the “Device Drivers” menu.</p>
+<img alt="../../../_images/img_23.jpg" src="../../../_images/img_23.jpg" />
+</li>
+</ul>
+</li>
+<li><p><strong>Enable NVME support</strong>:</p>
+<ul>
+<li><p>Navigate to the “NVME Support” section.</p>
+<img alt="../../../_images/img_24.jpg" src="../../../_images/img_24.jpg" />
+</li>
+<li><p>Enable “NVM Express block device” by pressing the spacebar twice.</p>
+<img alt="../../../_images/img_25.jpg" src="../../../_images/img_25.jpg" />
+</li>
+<li><p>Exit and save the kernel configuration.</p>
+<img alt="../../../_images/img_26.jpg" src="../../../_images/img_26.jpg" />
+</li>
+</ul>
+</li>
+<li><p><strong>Root File System configuration</strong>:</p>
+<p>To configure the Root File System, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>petalinux-config<span class="w"> </span>-c<span class="w"> </span>rootfs
+</pre></div>
+</div>
+<ul>
+<li><p>Navigate to the “Filesystem Packages” section.</p>
+<img alt="../../../_images/img_27.jpg" src="../../../_images/img_27.jpg" />
+</li>
+<li><p>Enter the “base” section.</p>
+<img alt="../../../_images/img_28.jpg" src="../../../_images/img_28.jpg" />
+</li>
+<li><p>Enter the “util-linux” section.</p>
+<img alt="../../../_images/img_29.jpg" src="../../../_images/img_29.jpg" />
+</li>
+<li><p>Select all options in this menu to enable utility functions.</p>
+<img alt="../../../_images/img_30.jpg" src="../../../_images/img_30.jpg" />
+</li>
+<li><p>Press “Exit” three times to return to the Root File System configuration menu.</p></li>
+<li><p>Navigate to the “Image Features” section.</p>
+<img alt="../../../_images/img_311.jpg" src="../../../_images/img_311.jpg" />
+</li>
+<li><p>Enable the following options:
+- “empty-root-password”
+- “serial-autologin-root”</p>
+<img alt="../../../_images/img_321.jpg" src="../../../_images/img_321.jpg" />
+</li>
+<li><p>Exit and save the Root File System configuration. The terminal output should look similar to the screenshot below:</p>
+<img alt="../../../_images/img_33.jpg" src="../../../_images/img_33.jpg" />
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="building-the-system-image-and-booting">
+<h2>Building the System Image and Booting<a class="headerlink" href="#building-the-system-image-and-booting" title="Permalink to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Configuration and Build</strong>:</p></li>
+</ol>
+<p>The configuration of the PetaLinux project has been completed. To build the project, the following command should be entered:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>petalinux-build
+</pre></div>
+</div>
+<p>This command may take a considerable amount of time to execute.</p>
+<blockquote>
+<div><img alt="../../../_images/img_34.jpg" src="../../../_images/img_34.jpg" />
+</div></blockquote>
+<p>Once the command completes, a warning message may appear regarding TFTPboot, depending on the system in use. This warning can be safely ignored, as the system is not being booted via a TFTP server.</p>
+<p>It is important to note that, occasionally, when running <code class="docutils literal notranslate"><span class="pre">petalinux-build</span></code> on a project with memory cached, an error may occur that causes the build to fail. To resolve this, the cache should be cleared, and a clean build can be performed by running the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>petalinux-build<span class="w"> </span>-x<span class="w"> </span>mrproper
+</pre></div>
+</div>
+<p>After executing this command, the <code class="docutils literal notranslate"><span class="pre">petalinux-build</span></code> command should be run again to successfully build the project.</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>Packaging the System Image</strong>:</p></li>
+</ol>
+<p>Once the system image is built, it needs to be packaged in U-Boot to generate the necessary files for booting the system. The following command should be entered:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>petalinux-package<span class="w"> </span>--boot<span class="w"> </span>--format<span class="w"> </span>BIN<span class="w"> </span>--plm<span class="w"> </span>--psmfw<span class="w"> </span>--u-boot<span class="w"> </span>--dtb<span class="w"> </span>--force
+</pre></div>
+</div>
+<p>After the above command finishes executing, the PetaLinux build is complete, and the VPK120 board is ready to be booted.</p>
+<blockquote>
+<div><img alt="../../../_images/img_35.jpg" src="../../../_images/img_35.jpg" />
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          
+				  
+				  <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="hardware_design_creation.html" class="btn btn-neutral float-left" title="Hardware Design Creation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="device_tree_structure.html" class="btn btn-neutral float-right" title="Device Tree Structure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021-2022, Advanced Micro Devices, Inc.
+      <span class="lastupdated">Last updated on October 24, 2022.
+      </span></p>
+  </div>
+
+
+
+										<div class="aem-Grid aem-Grid--16">
+											<div class="aem-GridColumn aem-GridColumn--xxxlarge--none aem-GridColumn--xsmall--16 aem-GridColumn--offset--xsmall--0 aem-GridColumn--xlarge--none aem-GridColumn--xxlarge--none aem-GridColumn--default--none aem-GridColumn--offset--large--1 aem-GridColumn--xlarge--12 aem-GridColumn--offset--default--0 aem-GridColumn--xxlarge--10 aem-GridColumn--offset--xlarge--2 aem-GridColumn--offset--xxlarge--3 aem-GridColumn--offset--xxxlarge--4 aem-GridColumn--xsmall--none aem-GridColumn--large--none aem-GridColumn aem-GridColumn--large--14 aem-GridColumn--xxxlarge--8 aem-GridColumn--default--16">
+												<div class="container-fluid sub-footer">
+
+													                    <div class="row">
+                        <div class="col-xs-24">
+                          <p><a target="_blank" href="https://www.amd.com/en/corporate/copyright">Terms and Conditions</a> | <a target="_blank" href="https://www.amd.com/en/corporate/privacy">Privacy</a> | <a target="_blank" href="https://www.amd.com/en/corporate/cookies">Cookie Policy</a> | <a target="_blank" href="https://www.amd.com/en/corporate/trademarks">Trademarks</a> | <a target="_blank" href="https://www.amd.com/system/files/documents/statement-human-trafficking-forced-labor.pdf">Statement on Forced Labor</a> | <a target="_blank" href="https://www.amd.com/en/corporate/competition">Fair and Open Competition</a> | <a target="_blank" href="https://www.amd.com/system/files/documents/amd-uk-tax-strategy.pdf">UK Tax Strategy</a> | <a target="_blank" href="https://docs.xilinx.com/v/u/9x6YvZKuWyhJId7y7RQQKA">Inclusive Terminology</a> | <a href="#cookiessettings" class="ot-sdk-show-settings">Cookies Settings</a></p>
+                        </div>
+                    </div>
+												</div>
+											</div>
+										</div>
+										
+</br>
+
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>
